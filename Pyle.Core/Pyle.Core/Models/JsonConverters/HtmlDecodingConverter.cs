@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 
-namespace RareExchange.Converters.JsonConverters
+namespace Pyle.Core.JsonConverters
 {
     public class HtmlDecodingConverter : JsonConverter
     {

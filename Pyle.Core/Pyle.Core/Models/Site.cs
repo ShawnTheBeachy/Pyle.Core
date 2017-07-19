@@ -14,12 +14,12 @@ namespace Pyle.Core
     {
         #region Aliases
 
-        //private IEnumerable<string> _aliases;
-        ///// <summary>
-        ///// A array of string aliases for the site. May be absent. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("aliases")]
-        //public IEnumerable<string> Aliases { get { return _aliases; } set { Set(ref _aliases, value); } }
+        private IEnumerable<string> _aliases;
+        /// <summary>
+        /// A array of string aliases for the site. May be absent. Included in the default filter.
+        /// </summary>
+        [JsonProperty("aliases")]
+        public IEnumerable<string> Aliases { get { return _aliases; } set { Set(ref _aliases, value); } }
 
         #endregion Aliases
 
@@ -36,34 +36,34 @@ namespace Pyle.Core
 
         #region Audience
 
-        //private string _audience;
-        ///// <summary>
-        ///// A description of the audience this site targets. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("audience")]
-        //public string Audience { get { return _audience; } set { Set(ref _audience, value); } }
+        private string _audience;
+        /// <summary>
+        /// A description of the audience this site targets. Included in the default filter.
+        /// </summary>
+        [JsonProperty("audience")]
+        public string Audience { get { return _audience; } set { Set(ref _audience, value); } }
 
         #endregion Audience
 
         #region ClosedBetaDate
 
-        //private DateTime _closedBetaDate;
-        ///// <summary>
-        ///// The date on which this site entered closed beta. May be absent. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("closed_beta_date"), JsonConverter(typeof(TimestampConverter))]
-        //public DateTime ClosedBetaDate { get { return _closedBetaDate; } set { Set(ref _closedBetaDate, value); } }
+        private DateTime _closedBetaDate;
+        /// <summary>
+        /// The date on which this site entered closed beta. May be absent. Included in the default filter.
+        /// </summary>
+        [JsonProperty("closed_beta_date"), JsonConverter(typeof(TimestampConverter))]
+        public DateTime ClosedBetaDate { get { return _closedBetaDate; } set { Set(ref _closedBetaDate, value); } }
 
         #endregion ClosedBetaDate
 
         #region FaviconUrl
 
-        //private string _faviconUrl;
-        ///// <summary>
-        ///// The url to the favicon for this site. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("favicon_url")]
-        //public string FaviconUrl { get { return _faviconUrl; } set { Set(ref _faviconUrl, value); } }
+        private string _faviconUrl;
+        /// <summary>
+        /// The url to the favicon for this site. Included in the default filter.
+        /// </summary>
+        [JsonProperty("favicon_url")]
+        public string FaviconUrl { get { return _faviconUrl; } set { Set(ref _faviconUrl, value); } }
 
         #endregion FaviconUrl
 
@@ -91,34 +91,34 @@ namespace Pyle.Core
 
         #region LaunchDate
 
-        //private DateTime _launchDate;
-        ///// <summary>
-        ///// The date on which this site launched. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("launch_date"), JsonConverter(typeof(TimestampConverter))]
-        //public DateTime LaunchDate { get { return _launchDate; } set { Set(ref _launchDate, value); } }
+        private DateTime _launchDate;
+        /// <summary>
+        /// The date on which this site launched. Included in the default filter.
+        /// </summary>
+        [JsonProperty("launch_date"), JsonConverter(typeof(TimestampConverter))]
+        public DateTime LaunchDate { get { return _launchDate; } set { Set(ref _launchDate, value); } }
 
         #endregion LaunchDate
 
         #region LogoUrl
 
-        //private string _logoUrl;
-        ///// <summary>
-        ///// The url to the logo for this site. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("logo_url")]
-        //public string LogoUrl { get { return _logoUrl; } set { Set(ref _logoUrl, value); } }
+        private string _logoUrl;
+        /// <summary>
+        /// The url to the logo for this site. Included in the default filter.
+        /// </summary>
+        [JsonProperty("logo_url")]
+        public string LogoUrl { get { return _logoUrl; } set { Set(ref _logoUrl, value); } }
 
         #endregion LogoUrl
 
         #region MarkdownExtensions
 
-        //private IEnumerable<MarkdownExtensionTypes> _markdownExtensions;
-        ///// <summary>
-        ///// An array of Markdown extensions used on this site. May be absent. One of 'MathJax', 'Prettify', 'Balsamiq' or 'jTab.' Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("markdown_extensions")]
-        //public IEnumerable<MarkdownExtensionTypes> MarkdownExtensions { get { return _markdownExtensions; } set { Set(ref _markdownExtensions, value); } }
+        private IEnumerable<MarkdownExtensionTypes> _markdownExtensions;
+        /// <summary>
+        /// An array of Markdown extensions used on this site. May be absent. One of 'MathJax', 'Prettify', 'Balsamiq' or 'jTab.' Included in the default filter.
+        /// </summary>
+        [JsonProperty("markdown_extensions")]
+        public IEnumerable<MarkdownExtensionTypes> MarkdownExtensions { get { return _markdownExtensions; } set { Set(ref _markdownExtensions, value); } }
 
         #endregion MarkdownExtensions
 
@@ -135,12 +135,12 @@ namespace Pyle.Core
 
         #region OpenBetaDate
 
-        //private DateTime _openBetaDate;
-        ///// <summary>
-        ///// The date on which this site entered open beta. May be absent. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("open_beta_date"), JsonConverter(typeof(TimestampConverter))]
-        //public DateTime OpenBetaDate { get { return _openBetaDate; } set { Set(ref _openBetaDate, value); } }
+        private DateTime _openBetaDate;
+        /// <summary>
+        /// The date on which this site entered open beta. May be absent. Included in the default filter.
+        /// </summary>
+        [JsonProperty("open_beta_date"), JsonConverter(typeof(TimestampConverter))]
+        public DateTime OpenBetaDate { get { return _openBetaDate; } set { Set(ref _openBetaDate, value); } }
 
         #endregion OpenBetaDate
 
@@ -157,12 +157,12 @@ namespace Pyle.Core
 
         #region SiteState
 
-        //private SiteStates _siteState;
-        ///// <summary>
-        ///// State of this site. One of 'normal', 'closed_beta', 'open_beta' or 'linked_meta.' Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("site_state")]
-        //public SiteStates SiteState { get { return _siteState; } set { Set(ref _siteState, value); } }
+        private SiteStates _siteState;
+        /// <summary>
+        /// State of this site. One of 'normal', 'closed_beta', 'open_beta' or 'linked_meta.' Included in the default filter.
+        /// </summary>
+        [JsonProperty("site_state")]
+        public SiteStates SiteState { get { return _siteState; } set { Set(ref _siteState, value); } }
 
         #endregion SiteState
 
@@ -179,12 +179,12 @@ namespace Pyle.Core
 
         #region SiteUrl
 
-        //private string _siteUrl;
-        ///// <summary>
-        ///// URL to this site. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("site_url")]
-        //public string SiteUrl { get { return _siteUrl; } set { Set(ref _siteUrl, value); } }
+        private string _siteUrl;
+        /// <summary>
+        /// URL to this site. Included in the default filter.
+        /// </summary>
+        [JsonProperty("site_url")]
+        public string SiteUrl { get { return _siteUrl; } set { Set(ref _siteUrl, value); } }
 
         #endregion SiteUrl
 
@@ -201,12 +201,12 @@ namespace Pyle.Core
 
         #region TwitterAccount
 
-        //private string _twitterAccount;
-        ///// <summary>
-        ///// Twitter handle for this site. May be absent. Included in the default filter.
-        ///// </summary>
-        //[JsonProperty("twitter_account")]
-        //public string TwitterAccount { get { return _twitterAccount; } set { Set(ref _twitterAccount, value); } }
+        private string _twitterAccount;
+        /// <summary>
+        /// Twitter handle for this site. May be absent. Included in the default filter.
+        /// </summary>
+        [JsonProperty("twitter_account")]
+        public string TwitterAccount { get { return _twitterAccount; } set { Set(ref _twitterAccount, value); } }
 
         #endregion TwitterAccount
 
