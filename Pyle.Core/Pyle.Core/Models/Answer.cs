@@ -2,7 +2,6 @@
 using Pyle.Core.JsonConverters;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace Pyle.Core
 {
@@ -65,13 +64,12 @@ namespace Pyle.Core
         #endregion Body
 
         #region BodyMarkdown
-
-        [JsonConverter(typeof(HtmlDecodingConverter))]
+        
         private string _bodyMarkdown;
         /// <summary>
         /// Represents the Markdown body of this question. Excluded in the default filter.
         /// </summary>
-        [JsonProperty("body_markdown")]
+        [JsonProperty("body_markdown"), JsonConverter(typeof(HtmlDecodingConverter))]
         public string BodyMarkdown { get { return _bodyMarkdown; } set { Set(ref _bodyMarkdown, value); } }
 
         #endregion BodyMarkdown
