@@ -4,7 +4,7 @@ using System;
 
 namespace Pyle.Core.JsonConverters
 {
-    internal class TimestampConverter : JsonConverter
+    public class TimestampConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {

@@ -29,5 +29,13 @@ namespace Pyle.Core
         public int Reputation { get => _reputation; set => Set(ref _reputation, value); }
 
         #endregion Reputation
+
+        #region UserId
+
+        private int _userId = default(int);
+        [JsonProperty("user_id")]
+        public int UserId { get => _userId; set => Set(ref _userId, value); }
+
+        #endregion UserId
     }
 }
