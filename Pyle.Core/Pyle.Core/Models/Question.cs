@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Pyle.Core
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class Question : BaseNotify
+    public class Question : CoreModel
     {
         #region AcceptedAnswerId
 
