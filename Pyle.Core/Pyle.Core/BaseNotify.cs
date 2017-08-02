@@ -24,8 +24,11 @@ namespace Pyle.Core
         /// <param name="value"></param>
         /// <param name="propertyName"></param>
         /// <returns></returns>
-        public bool Set<T>(ref T storage, T value, [CallerMemberName()]string propertyName = null)
+        public bool Set<T>(ref T storage, T value, [CallerMemberName()]string propertyName = null, bool allowNull = true)
         {
+            if (!allowNull && value == null)
+                return false;
+
             if (!Equals(storage, value))
             {
                 storage = value;
