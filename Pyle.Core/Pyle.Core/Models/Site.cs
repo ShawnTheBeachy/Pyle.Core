@@ -217,6 +217,7 @@ namespace Pyle.Core
         {
             EscapedMathJaxDelimiters,
             MathJax,
+            MHChemMathJax,
             Prettify,
             Balsamiq,
             jTab

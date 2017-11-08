@@ -2,6 +2,7 @@
 using Pyle.Core.JsonConverters;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Pyle.Core
 {
@@ -98,12 +99,12 @@ namespace Pyle.Core
 
         #region Comments
 
-        private List<Comment> _comments = new List<Comment>();
+        private ObservableCollection<Comment> _comments = new ObservableCollection<Comment>();
         /// <summary>
         /// Represents the collection of comments posted on this answer. May be absent. Excluded in the default filter.
         /// </summary>
         [JsonProperty("comments")]
-        public List<Comment> Comments { get { return _comments; } set { Set(ref _comments, value); } }
+        public ObservableCollection<Comment> Comments { get { return _comments; } set { Set(ref _comments, value); } }
 
         #endregion Comments
 

@@ -5,6 +5,13 @@ namespace Pyle.Core
     [JsonObject(MemberSerialization.OptIn)]
     public class Error : CoreModel
     {
+        public Error(int id, string name, string message)
+        {
+            ErrorId = id;
+            ErrorName = name;
+            ErrorMessage = message;
+        }
+
         #region ErrorId
 
         private int _errorId = default(int);

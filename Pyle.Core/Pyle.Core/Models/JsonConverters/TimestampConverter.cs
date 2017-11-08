@@ -22,11 +22,20 @@ namespace Pyle.Core.JsonConverters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var dt = (DateTime)value;
-            var dtf = new DateTimeOffset(dt);
-            var utc = dtf.ToUnixTimeSeconds();
-            var t = JToken.FromObject(utc);
-            t.WriteTo(writer);
+            try
+            {
+                var dt = (DateTime)value;
+                var dtf = new DateTimeOffset(dt);
+                var utc = dtf.ToUnixTimeSeconds();
+                var t = JToken.FromObject(utc);
+                t.WriteTo(writer);
+            }
+
+            catch
+            {
+                var t = JToken.FromObject(new DateTime());
+                t.WriteTo(writer);
+            }
         }
     }
 }

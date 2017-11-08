@@ -2,7 +2,7 @@
 using Pyle.Core.JsonConverters;
 using System;
 
-namespace Pyle.Core.Models
+namespace Pyle.Core
 {
     public class InboxItem : BaseNotify
     {
@@ -23,7 +23,7 @@ namespace Pyle.Core.Models
         /// <summary>
         /// Unchanged in unsafe filters. May be absent. Not included in the default filter.
         /// </summary>
-        [JsonProperty("body")]
+        [JsonProperty("body"), JsonConverter(typeof(HtmlDecodingConverter))]
         public string Body { get => _body; set => Set(ref _body, value); }
 
         #endregion Body
@@ -112,7 +112,7 @@ namespace Pyle.Core.Models
         /// <summary>
         /// Included in the default filter.
         /// </summary>
-        [JsonProperty("title")]
+        [JsonProperty("title"), JsonConverter(typeof(HtmlDecodingConverter))]
         public string Title { get => _title; set => Set(ref _title, value); }
 
         #endregion Title

@@ -2,6 +2,7 @@
 using Pyle.Core.JsonConverters;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Pyle.Core
 {
@@ -26,9 +27,9 @@ namespace Pyle.Core
 
         #region Answers
 
-        private List<Answer> _answers = new List<Answer>();
+        private ObservableCollection<Answer> _answers = new ObservableCollection<Answer>();
         [JsonProperty("answers")]
-        public List<Answer> Answers { get => _answers; set => Set(ref _answers, value); }
+        public ObservableCollection<Answer> Answers { get => _answers; set => Set(ref _answers, value); }
 
         #endregion Answers
 
@@ -130,9 +131,9 @@ namespace Pyle.Core
 
         #region Comments
 
-        private List<Comment> _comments = new List<Comment>();
+        private ObservableCollection<Comment> _comments = new ObservableCollection<Comment>();
         [JsonProperty("comments")]
-        public List<Comment> Comments { get => _comments; set => Set(ref _comments, value); }
+        public ObservableCollection<Comment> Comments { get => _comments; set => Set(ref _comments, value); }
 
         #endregion Comments
 
@@ -160,13 +161,13 @@ namespace Pyle.Core
 
         #endregion DeleteVoteCount
 
-        #region DownvoteCount
+        #region DownVoteCount
 
-        private int _downvoteCount = default(int);
+        private int _downVoteCount = default(int);
         [JsonProperty("down_vote_count")]
-        public int DownvoteCount { get => _downvoteCount; set => Set(ref _downvoteCount, value); }
+        public int DownVoteCount { get => _downVoteCount; set => Set(ref _downVoteCount, value); }
 
-        #endregion DownvoteCount
+        #endregion DownVoteCount
 
         #region Downvoted
 
@@ -328,13 +329,13 @@ namespace Pyle.Core
 
         #endregion Title
 
-        #region UpvoteCount
+        #region UpVoteCount
 
-        private int _upvoteCount = default(int);
+        private int _upVoteCount = default(int);
         [JsonProperty("up_vote_count")]
-        public int UpvoteCount { get => _upvoteCount; set => Set(ref _upvoteCount, value); }
+        public int UpVoteCount { get => _upVoteCount; set => Set(ref _upVoteCount, value); }
 
-        #endregion UpvoteCount
+        #endregion UpVoteCount
 
         #region Upvoted
 
@@ -351,5 +352,8 @@ namespace Pyle.Core
         public int ViewCount { get => _viewCount; set => Set(ref _viewCount, value); }
 
         #endregion ViewCount
+
+        public string GetTagsDisplay(IEnumerable<string> tags) =>
+            string.Join(", ", tags);
     }
 }
