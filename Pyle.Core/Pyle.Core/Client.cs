@@ -247,6 +247,40 @@ namespace Pyle.Core
 
         #endregion CRUD
 
+        #region Favoriting
+
+        public async Task<ClientResponse<IEnumerable<Question>>> FavoriteQuestionAsync(ClientRequestConfig config, int questionId)
+        {
+            var url = $"/questions/{questionId}/favorite";
+            var data = new Dictionary<string, string>
+            {
+                ["site"] = Site,
+                ["filter"] = config.Filter,
+                ["access_token"] = AccessToken,
+                ["key"] = _key
+            };
+
+            var response = await PostRequestAsync<IEnumerable<Question>>(url, data, config);
+            return response;
+        }
+
+        public async Task<ClientResponse<IEnumerable<Question>>> UndoFavoriteQuestionAsync(ClientRequestConfig config, int questionId)
+        {
+            var url = $"/questions/{questionId}/favorite/undo";
+            var data = new Dictionary<string, string>
+            {
+                ["site"] = Site,
+                ["filter"] = config.Filter,
+                ["access_token"] = AccessToken,
+                ["key"] = _key
+            };
+
+            var response = await PostRequestAsync<IEnumerable<Question>>(url, data, config);
+            return response;
+        }
+
+        #endregion Favoriting
+
         #region Voting
 
         #region Downvoting
