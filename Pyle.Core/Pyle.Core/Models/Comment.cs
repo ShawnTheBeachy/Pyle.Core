@@ -2,7 +2,7 @@
 using Pyle.Core.JsonConverters;
 using System;
 
-namespace Pyle.Core
+namespace Pyle.Core.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class Comment : BaseNotify

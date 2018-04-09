@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Pyle.Core
+namespace Pyle.Core.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class Question : CoreModel

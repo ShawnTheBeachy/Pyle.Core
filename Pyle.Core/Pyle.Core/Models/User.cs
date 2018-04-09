@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Pyle.Core.JsonConverters;
 
-namespace Pyle.Core
+namespace Pyle.Core.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class User : BaseNotify

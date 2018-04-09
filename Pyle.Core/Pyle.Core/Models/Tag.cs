@@ -3,7 +3,7 @@ using Pyle.Core.JsonConverters;
 using System;
 using System.Collections.Generic;
 
-namespace Pyle.Core
+namespace Pyle.Core.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class Tag : BaseNotify

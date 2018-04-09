@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Pyle.Core
+namespace Pyle.Core.Models
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class Answer : BaseNotify
@@ -65,7 +65,7 @@ namespace Pyle.Core
         #endregion Body
 
         #region BodyMarkdown
-        
+
         private string _bodyMarkdown;
         /// <summary>
         /// Represents the Markdown body of this question. Excluded in the default filter.

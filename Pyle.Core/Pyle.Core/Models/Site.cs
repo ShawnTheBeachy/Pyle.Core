@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
+using Pyle.Core.Enums;
 using Pyle.Core.JsonConverters;
 using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace Pyle.Core
+namespace Pyle.Core.Models
 {
     /// <summary>
     /// This type represents a site in the Stack Exchange network.
@@ -19,7 +20,7 @@ namespace Pyle.Core
         /// A array of string aliases for the site. May be absent. Included in the default filter.
         /// </summary>
         [JsonProperty("aliases")]
-        public IEnumerable<string> Aliases { get { return _aliases; } set { Set(ref _aliases, value); } }
+        public IEnumerable<string> Aliases { get => _aliases; set => Set(ref _aliases, value); }
 
         #endregion Aliases
 
@@ -30,7 +31,7 @@ namespace Pyle.Core
         /// The string name to use in API calls referencing this site. Included in the default filter.
         /// </summary>
         [JsonProperty("api_site_parameter")]
-        public string ApiSiteParameter { get { return _apiSiteParameter; } set { Set(ref _apiSiteParameter, value); } }
+        public string ApiSiteParameter { get => _apiSiteParameter; set => Set(ref _apiSiteParameter, value); }
 
         #endregion ApiSiteParameter
 
@@ -89,6 +90,16 @@ namespace Pyle.Core
 
         #endregion IconUrl
 
+        #region IsMember
+
+        private bool _isMember = false;
+        /// <summary>
+        /// Whether the user is a member of this site.
+        /// </summary>
+        public bool IsMember { get => _isMember; set => Set(ref _isMember, value); }
+
+        #endregion IsMember
+
         #region LaunchDate
 
         private DateTime _launchDate;
@@ -113,12 +124,12 @@ namespace Pyle.Core
 
         #region MarkdownExtensions
 
-        private IEnumerable<MarkdownExtensionTypes> _markdownExtensions;
+        private IEnumerable<MarkdownExtensionType> _markdownExtensions;
         /// <summary>
         /// An array of Markdown extensions used on this site. May be absent. One of 'MathJax', 'Prettify', 'Balsamiq' or 'jTab.' Included in the default filter.
         /// </summary>
         [JsonProperty("markdown_extensions")]
-        public IEnumerable<MarkdownExtensionTypes> MarkdownExtensions { get { return _markdownExtensions; } set { Set(ref _markdownExtensions, value); } }
+        public IEnumerable<MarkdownExtensionType> MarkdownExtensions { get => _markdownExtensions; set => Set(ref _markdownExtensions, value); }
 
         #endregion MarkdownExtensions
 
@@ -157,23 +168,23 @@ namespace Pyle.Core
 
         #region SiteState
 
-        private SiteStates _siteState;
+        private SiteState _siteState;
         /// <summary>
         /// State of this site. One of 'normal', 'closed_beta', 'open_beta' or 'linked_meta.' Included in the default filter.
         /// </summary>
         [JsonProperty("site_state")]
-        public SiteStates SiteState { get { return _siteState; } set { Set(ref _siteState, value); } }
+        public SiteState SiteState { get => _siteState; set => Set(ref _siteState, value); }
 
         #endregion SiteState
 
         #region SiteType
 
-        private SiteTypes _siteType;
+        private SiteType _siteType;
         /// <summary>
         /// State of this site. One of 'main_site' or 'meta_site.' Included in the default filter.
         /// </summary>
         [JsonProperty("site_type")]
-        public SiteTypes SiteType { get { return _siteType; } set { Set(ref _siteType, value); } }
+        public SiteType SiteType { get { return _siteType; } set { Set(ref _siteType, value); } }
 
         #endregion SiteType
 
@@ -209,38 +220,5 @@ namespace Pyle.Core
         public string TwitterAccount { get { return _twitterAccount; } set { Set(ref _twitterAccount, value); } }
 
         #endregion TwitterAccount
-
-        /// <summary>
-        /// A collection of Markdown extension types.
-        /// </summary>
-        public enum MarkdownExtensionTypes
-        {
-            EscapedMathJaxDelimiters,
-            MathJax,
-            MHChemMathJax,
-            Prettify,
-            Balsamiq,
-            jTab
-        }
-
-        /// <summary>
-        /// Options for site state.
-        /// </summary>
-        public enum SiteStates
-        {
-            normal,
-            closed_beta,
-            open_beta,
-            linked_meta
-        }
-
-        /// <summary>
-        /// Options for site type.
-        /// </summary>
-        public enum SiteTypes
-        {
-            main_site,
-            meta_site
-        }
     }
 }
