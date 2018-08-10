@@ -22,7 +22,7 @@ namespace Pyle.Core.Models
         public RequestBuilder(IKeyProvider keyProvider, ISiteProvider siteProvider, ITokenProvider tokenProvider)
         {
             KeyProvider = keyProvider ?? throw new ArgumentNullException(nameof(keyProvider));
-            SiteProvider = siteProvider ?? throw new ArgumentNullException(nameof(siteProvider));
+            SiteProvider = siteProvider;
             TokenProvider = tokenProvider ?? throw new ArgumentNullException(nameof(tokenProvider));
         }
 
@@ -63,7 +63,7 @@ namespace Pyle.Core.Models
 
             if (!_noSite)
             {
-                var site = SiteProvider.GetSite()?.ApiSiteParameter;
+                var site = SiteProvider?.GetSite()?.ApiSiteParameter;
 
                 if (!string.IsNullOrWhiteSpace(site))
                     parameters["site"] = site;

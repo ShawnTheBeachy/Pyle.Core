@@ -8,6 +8,7 @@ namespace Pyle.Core.Enums.Maps
         {
             [Endpoint.Answers] = "answers",
             [Endpoint.AssociatedAccounts] = "users/<user_id>/associated",
+            [Endpoint.CreateQuestion] = "questions/add",
             [Endpoint.DownvoteAnswer] = "answers/<answer_id>/downvote",
             [Endpoint.DownvoteQuestion] = "questions/<question_id>/downvote",
             [Endpoint.FavoriteQuestion] = "questions/<question_id>/favorite",

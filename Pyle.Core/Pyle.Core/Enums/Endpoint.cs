@@ -4,6 +4,7 @@
     {
         Answers,
         AssociatedAccounts,
+        CreateQuestion,
         DownvoteAnswer,
         DownvoteQuestion,
         FavoriteQuestion,

@@ -108,6 +108,17 @@ namespace Pyle.Core.Interfaces
         #region CRUD
 
         /// <summary>
+        /// Creates a question on a site.
+        /// </summary>
+        /// <param name="body">The body of the question.</param>
+        /// <param name="tags">The tags to be applied to the question.</param>
+        /// <param name="title">The title of the question.</param>
+        /// <param name="filter">The pattern by which to filter returned fields.</param>
+        /// <returns>The created question.</returns>
+        Task<ClientResponse<IEnumerable<Question>>> CreateQuestionAsync(string body, IEnumerable<string> tags, string title,
+            string filter = "default");
+
+        /// <summary>
         /// Gets a list of questions by their ids.
         /// </summary>
         /// <param name="questionIds">The ids for which to get questions.</param>
